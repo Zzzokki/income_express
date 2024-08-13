@@ -1,9 +1,15 @@
 "use client";
 
-export default function Home() {
+import { useAuth } from "@/components/providers/AuthProvider";
+
+const HomePage = () => {
+  const { user } = useAuth();
+
   return (
     <div className="w-full h-screen flex justify-center items-center text-3xl">
-      Home
+      Hello {user?.username}
     </div>
   );
-}
+};
+
+export default HomePage;
